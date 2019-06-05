@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+*, *:after, *:before {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 10px 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+.container {
+  padding: 20px;
+}
+
+/*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+/* Desktop */
+/* Tablet Landscape */
+/* Tablet Portrait*/
+/* Phones */
+@media all and (max-width: 480px) {
+  .container div.wheel {
+    width: 300px;
+    height: 300px;
+  }
+  .container div.wheel .segment i {
+    font-size: 48px;
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .wheel {
+  display: flex;
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  overflow: hidden;
+  animation: 20s linear 0s infinite rotate;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.container .wheel .segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --a: calc(var(--over50, 0) * -100%);
+  --b: calc((1 + var(--over50, 0)) * 100%);
+  --degrees: calc((var(--offset, 0) / 100) * 360);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees) * 1deg));
+  transform-origin: 50% 100%;
+  clip-path: polygon(var(--a) var(--a), var(--b) var(--a), var(--b) var(--b), var(--a) var(--b));
+  z-index: calc(1 + var(--over50));
+}
+.container .wheel .segment:before, .container .wheel .segment:after {
+  background: var(--bg, #e74c3c);
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+.container .wheel .segment:before {
+  font-family: "Font Awesome 5 Pro";
+  --degrees: calc( (var(--value, 45) / 100) * 360);
+  transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+  transform-origin: 50% 0;
+  content: attr(data-label);
+}
+.container .wheel .segment:after {
+  opacity: var(--over50, 0);
+}
+.container .wheel .segment i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 49%;
+  transform: rotate(-60deg);
+  color: white;
+  font-size: 58px;
+  height: 29%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=/app.c09d0a7b.css.map */

@@ -1,3 +1,0 @@
-# About Me App
-
-This app was going to be an about me/cv site. I had the idea of it being a spinning wheel with each slice being a different section of my cv. I was also using it as a good excuse to learn how to use parcel and and dig into some VueJS. I got to this point with lots of help from the article https://codeburst.io/how-to-pure-css-pie-charts-w-css-variables-38287aea161e, before getting stuck with the layering of the :before and :after psuedo elements which are blocking click events to some of the sections. I'm still determined to solve the issue using just html and css for the spinning wheel. Will hopefully update soon but for now you can view the app here: https://josh-newton.github.io/about-me-app.   
