@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "My App",
+  "main": "app.js",
+  "scripts": {
+    "dev": "parcel ./code/index.html",
+    "prod": "parcel build ./code/index.html --public-url ./"
+  },
+  "keywords": [],
+  "author": "Josh Newton",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-eslint": "^1.0.7",
+    "sass": "^1.19.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "snap": "^1.1.0",
+    "snapsvg": "^0.5.1",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-router": "^3.0.6"
+  }
+}
